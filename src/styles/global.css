@@ -1,0 +1,1281 @@
+/* =========================================================
+   FLOW BY ADAPT — GLOBAL STYLES
+   ========================================================= */
+
+
+/* =========================================================
+   DESIGN TOKENS
+   ========================================================= */
+
+:root {
+	/* Flow brand */
+	--flow-purple: #9b7cff;
+	--flow-blue: #5c7cfa;
+	--flow-blue-soft: #6394fd;
+	--flow-pink: #fd51b1;
+
+	/* Dark surfaces */
+	--flow-bg: #0e1016;
+	--flow-surface: #151821;
+	--flow-surface-soft: #191c27;
+
+	/* Text */
+	--flow-text: #f4f4f6;
+	--flow-text-secondary: #b8bbc6;
+	--flow-text-muted: #858997;
+
+	/* Borders */
+	--flow-border: #30333e;
+	--flow-border-soft: rgba(255, 255, 255, 0.08);
+
+	/* Layout */
+	--flow-content-width: 1100px;
+	--flow-page-padding: clamp(1.25rem, 5vw, 8vw);
+
+	/* Shape */
+	--flow-radius-small: 0.4rem;
+	--flow-radius-medium: 0.75rem;
+}
+
+
+/* =========================================================
+   RESET / DOCUMENT
+   ========================================================= */
+
+* {
+	box-sizing: border-box;
+}
+
+html {
+	font-family:
+		Inter,
+		"Segoe UI",
+		Arial,
+		sans-serif;
+
+	background: var(--flow-bg);
+	color: var(--flow-text);
+
+	scroll-behavior: smooth;
+}
+
+body {
+	margin: 0;
+	min-width: 320px;
+
+	background: var(--flow-bg);
+	color: var(--flow-text);
+}
+
+a {
+	color: inherit;
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.site-header {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+
+	z-index: 10;
+
+	padding: 1.5rem var(--flow-page-padding);
+}
+
+.header-inner {
+	width: min(100%, var(--flow-content-width));
+	margin: 0 auto;
+
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+	gap: 2rem;
+}
+
+.site-brand {
+	display: inline-flex;
+	align-items: center;
+
+	text-decoration: none;
+}
+
+.site-logo {
+	display: block;
+
+	width: auto;
+	height: 58px;
+}
+
+.site-nav {
+	display: flex;
+	align-items: center;
+
+	gap: 2rem;
+}
+
+.site-nav a {
+	position: relative;
+
+	color: var(--flow-text-secondary);
+
+	text-decoration: none;
+
+	font-size: 0.95rem;
+	font-weight: 600;
+
+	transition:
+		color 0.15s ease,
+		transform 0.15s ease;
+}
+
+.site-nav a:hover {
+	color: var(--flow-text);
+
+	transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   SHARED CONTENT WIDTH
+   ========================================================= */
+
+.hero-content,
+.section-content {
+	width: min(100%, var(--flow-content-width));
+	margin: 0 auto;
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.hero {
+	min-height: 100vh;
+
+	display: flex;
+	align-items: flex-start;
+
+	padding:
+		12rem
+		var(--flow-page-padding)
+		6rem;
+
+	background:
+		radial-gradient(
+			circle at 75% 30%,
+			rgba(92, 124, 250, 0.18),
+			transparent 35%
+		),
+		radial-gradient(
+			circle at 85% 70%,
+			rgba(253, 81, 177, 0.12),
+			transparent 30%
+		),
+		var(--flow-bg);
+}
+
+h1 {
+	max-width: 930px;
+
+	margin: 0;
+
+	font-size: clamp(3rem, 7vw, 6.5rem);
+	font-weight: 650;
+
+	line-height: 0.98;
+	letter-spacing: -0.055em;
+
+	color: var(--flow-text);
+}
+
+.intro {
+	max-width: 760px;
+
+	margin: 2.5rem 0 0;
+
+	font-size: clamp(1.1rem, 2vw, 1.35rem);
+	line-height: 1.65;
+
+	color: var(--flow-text-secondary);
+}
+
+
+/* =========================================================
+   HERO ACTIONS
+   ========================================================= */
+
+.actions {
+	display: flex;
+	align-items: center;
+
+	gap: 1rem;
+
+	margin-top: 2.5rem;
+}
+
+.button {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+
+	min-height: 48px;
+
+	padding: 0.85rem 1.3rem;
+
+	border-radius: var(--flow-radius-small);
+
+	text-decoration: none;
+
+	font-weight: 600;
+
+	transition:
+		transform 0.15s ease,
+		background-color 0.15s ease,
+		border-color 0.15s ease;
+}
+
+.button:hover {
+	transform: translateY(-2px);
+}
+
+.button.primary {
+	background: var(--flow-purple);
+	color: var(--flow-bg);
+}
+
+.button.primary:hover {
+	background: #aa90ff;
+}
+
+.button.secondary {
+	border: 1px solid var(--flow-border);
+
+	color: var(--flow-text);
+
+	background: transparent;
+}
+
+.button.secondary:hover {
+	border-color: var(--flow-blue-soft);
+
+	background: rgba(99, 148, 253, 0.06);
+}
+
+
+/* =========================================================
+   SECTION EYEBROWS
+   ========================================================= */
+
+.eyebrow {
+	margin: 0 0 1.5rem;
+
+	font-size: 0.8rem;
+	font-weight: 700;
+
+	letter-spacing: 0.14em;
+
+	color: var(--flow-pink);
+}
+
+
+/* =========================================================
+   ORIGIN / WHY FLOW EXISTS
+   ========================================================= */
+
+.origin {
+	padding:
+		9rem
+		var(--flow-page-padding);
+
+	background: var(--flow-surface);
+}
+
+.origin h2,
+.capabilities h2 {
+	max-width: 780px;
+
+	margin: 0 0 2.5rem;
+
+	font-size: clamp(2.4rem, 4.5vw, 4.25rem);
+	font-weight: 650;
+
+	line-height: 1.05;
+	letter-spacing: -0.04em;
+
+	color: var(--flow-text);
+}
+
+.origin-copy {
+	max-width: 760px;
+}
+
+.origin-copy p {
+	margin:
+		0
+		0
+		1.5rem;
+
+	font-size: 1.15rem;
+	line-height: 1.75;
+
+	color: var(--flow-text-secondary);
+}
+
+.origin-copy p:last-child {
+	margin-bottom: 0;
+}
+
+
+/* =========================================================
+   WHAT FLOW DOES
+   ========================================================= */
+
+.capabilities {
+	padding:
+		9rem
+		var(--flow-page-padding);
+
+	background: var(--flow-bg);
+}
+
+.section-heading {
+	margin-bottom: 3.5rem;
+}
+
+.section-intro {
+	max-width: 720px;
+
+	margin: -0.75rem 0 0;
+
+	font-size: 1.15rem;
+	line-height: 1.7;
+
+	color: var(--flow-text-secondary);
+}
+
+.capability-grid {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+
+	gap: 1.25rem;
+}
+
+.capability-card {
+	min-width: 0;
+
+	padding: 2rem;
+
+	border: 1px solid var(--flow-border-soft);
+	border-radius: var(--flow-radius-medium);
+
+	background: rgba(255, 255, 255, 0.015);
+
+	transition:
+		transform 0.15s ease,
+		border-color 0.15s ease,
+		background-color 0.15s ease;
+}
+
+.capability-card:hover {
+	transform: translateY(-3px);
+
+	border-color: rgba(155, 124, 255, 0.4);
+
+	background: rgba(155, 124, 255, 0.035);
+}
+
+.capability-icon-wrap {
+	display: flex;
+	align-items: center;
+
+	min-height: 64px;
+
+	margin-bottom: 1.5rem;
+}
+
+.capability-icon {
+	display: block;
+
+	width: 58px;
+	height: 58px;
+}
+
+.capability-label {
+	margin: 0 0 0.85rem;
+
+	font-size: 0.78rem;
+	font-weight: 700;
+
+	letter-spacing: 0.12em;
+
+	color: var(--flow-blue);
+}
+
+.capability-card h3 {
+	max-width: 440px;
+
+	margin: 0 0 1rem;
+
+	font-size: clamp(1.5rem, 2.5vw, 2rem);
+	font-weight: 650;
+
+	line-height: 1.15;
+	letter-spacing: -0.025em;
+
+	color: var(--flow-text);
+}
+
+.capability-card > p:last-child {
+	max-width: 470px;
+
+	margin: 0;
+
+	font-size: 1rem;
+	line-height: 1.65;
+
+	color: var(--flow-text-secondary);
+}
+
+
+/* =========================================================
+   RESPONSIVE — TABLET / MOBILE
+   ========================================================= */
+
+@media screen and (max-width: 700px) {
+
+	:root {
+		--flow-page-padding: 1.5rem;
+	}
+
+	.site-header {
+		padding:
+			1.25rem
+			var(--flow-page-padding);
+	}
+
+	.site-logo {
+		height: 38px;
+	}
+
+	.site-nav {
+		gap: 1rem;
+	}
+
+	.site-nav a {
+		font-size: 0.85rem;
+	}
+
+	.hero {
+		padding-top: 7rem;
+		padding-bottom: 4rem;
+	}
+
+	.actions {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+
+	.origin,
+	.capabilities {
+		padding-top: 6rem;
+		padding-bottom: 6rem;
+	}
+
+	.capability-grid {
+		grid-template-columns: 1fr;
+	}
+
+	.capability-card {
+		padding: 1.5rem;
+	}
+}
+
+/* =========================================================
+   SELECTED TOOLS
+   ========================================================= */
+
+.featured-tools {
+	padding:
+		9rem
+		var(--flow-page-padding);
+
+	background: var(--flow-surface);
+}
+
+/* =========================================================
+   SELECTED TOOLS — SECTION HEADING
+   ========================================================= */
+
+.featured-tools .section-heading h2 {
+    max-width: 850px;
+
+    font-size: clamp(3rem, 5vw, 4.5rem);
+    line-height: 1.05;
+    letter-spacing: -0.035em;
+}
+
+
+/* =========================================================
+   SELECTED TOOLS — LIST
+   ========================================================= */
+
+.featured-tool-list {
+	display: flex;
+	flex-direction: column;
+
+	gap: 7rem;
+}
+
+
+/* =========================================================
+   SELECTED TOOLS — ROW LAYOUT
+   ========================================================= */
+
+.featured-tool {
+	display: grid;
+	grid-template-columns:
+		minmax(0, 1.4fr)
+		minmax(280px, 0.6fr);
+
+	align-items: center;
+
+	gap: 4rem;
+}
+
+.featured-tool-reverse {
+	grid-template-columns:
+		minmax(280px, 0.6fr)
+		minmax(0, 1.4fr);
+}
+
+.featured-tool-reverse .featured-tool-image {
+	order: 2;
+}
+
+.featured-tool-reverse .featured-tool-copy {
+	order: 1;
+}
+
+
+/* =========================================================
+   SELECTED TOOLS — SCREENSHOT FRAME
+   ========================================================= */
+
+.featured-tool-image {
+	min-width: 0;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	padding: 0.15rem;
+
+	position: relative;
+	z-index: 1;
+
+	border: 1px solid var(--flow-border-soft);
+	border-radius: var(--flow-radius-medium);
+
+	background:
+		linear-gradient(
+			135deg,
+			rgba(92, 124, 250, 0.035),
+			rgba(253, 81, 177, 0.025)
+		),
+		var(--flow-bg);
+
+	overflow: visible;
+
+	transition:
+		border-color 0.2s ease,
+		box-shadow 0.2s ease;
+}
+
+.featured-tool-screenshot {
+	display: block;
+
+	width: 100%;
+	height: auto;
+
+	position: relative;
+	z-index: 1;
+
+	border-radius: 0.45rem;
+
+	cursor: zoom-in;
+
+	box-shadow:
+		0 20px 55px rgba(0, 0, 0, 0.28);
+
+	transition:
+		transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1),
+		box-shadow 0.35s ease;
+}
+
+
+/* =========================================================
+   SELECTED TOOLS — SCREENSHOT HOVER
+   ========================================================= */
+
+/* Bring the image frame above surrounding content */
+.featured-tool-image:hover {
+    z-index: 20;
+
+    border-color: rgba(155, 124, 255, 0.35);
+
+    box-shadow:
+        0 18px 50px rgba(0, 0, 0, 0.2);
+}
+
+
+/* ---------------------------------------------------------
+   HOVER DIRECTION
+   --------------------------------------------------------- */
+
+/* Images on the left expand towards the left */
+.featured-tool:not(.featured-tool-reverse) .featured-tool-screenshot {
+    transform-origin: center right;
+}
+
+/* Images on the right expand towards the right */
+.featured-tool-reverse .featured-tool-screenshot {
+    transform-origin: center left;
+}
+
+
+/* ---------------------------------------------------------
+   SCREENSHOT ENLARGEMENT
+   --------------------------------------------------------- */
+
+.featured-tool-image:hover .featured-tool-screenshot {
+    z-index: 21;
+
+    transform: scale(1.35);
+
+    box-shadow:
+        0 32px 90px rgba(0, 0, 0, 0.55);
+}
+
+
+/* =========================================================
+   SELECTED TOOLS — COPY
+   ========================================================= */
+
+.featured-tool-copy {
+	max-width: 420px;
+}
+
+.featured-tool-category {
+	margin: 0 0 0.8rem;
+
+	font-size: 0.78rem;
+	font-weight: 700;
+
+	letter-spacing: 0.12em;
+
+	color: var(--flow-blue);
+}
+
+.featured-tool-copy h3 {
+	margin: 0 0 1rem;
+
+	font-size: clamp(2rem, 3vw, 3rem);
+	font-weight: 650;
+
+	line-height: 1.05;
+	letter-spacing: -0.035em;
+
+	color: var(--flow-text);
+}
+
+.featured-tool-copy p:last-child {
+	margin: 0;
+
+	font-size: 1.05rem;
+	line-height: 1.7;
+
+	color: var(--flow-text-secondary);
+}
+
+
+/* =========================================================
+   SELECTED TOOLS — RESPONSIVE
+   ========================================================= */
+
+@media screen and (max-width: 800px) {
+
+    .featured-tools {
+        padding-top: 6rem;
+        padding-bottom: 6rem;
+    }
+
+    .featured-tool,
+    .featured-tool-reverse {
+        grid-template-columns: 1fr;
+
+        gap: 2rem;
+    }
+
+    .featured-tool-reverse .featured-tool-image,
+    .featured-tool-reverse .featured-tool-copy {
+        order: initial;
+    }
+
+    .featured-tool-list {
+        gap: 4rem;
+    }
+
+    .featured-tool-copy {
+        max-width: none;
+    }
+
+    .featured-tool-image {
+        height: auto;
+        min-height: 0;
+
+        padding: 0.15rem;
+
+        overflow: hidden;
+    }
+
+    .featured-tool-screenshot {
+        width: 100%;
+        height: auto;
+
+        max-height: 520px;
+    }
+
+    .featured-tool-image:hover .featured-tool-screenshot {
+        transform: none;
+    }
+}
+
+/* =========================================================
+   BUILT FOR PRACTICE
+   ========================================================= */
+
+.principles {
+	padding:
+		9rem
+		var(--flow-page-padding);
+
+	background: var(--flow-bg);
+}
+
+
+/* =========================================================
+   BUILT FOR PRACTICE — SECTION HEADING
+   ========================================================= */
+
+.principles .section-heading h2 {
+	max-width: 850px;
+
+	margin: 0 0 2.5rem;
+
+	font-size: clamp(3rem, 5vw, 4.5rem);
+	font-weight: 650;
+
+	line-height: 1.05;
+	letter-spacing: -0.04em;
+
+	color: var(--flow-text);
+}
+
+.principles .section-intro {
+	max-width: 760px;
+}
+
+
+/* =========================================================
+   BUILT FOR PRACTICE — GRID
+   ========================================================= */
+
+.principles-grid {
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+
+	gap: 1.25rem;
+
+	margin-top: 4rem;
+}
+
+
+/* =========================================================
+   BUILT FOR PRACTICE — CARDS
+   ========================================================= */
+
+.principle-card {
+	min-width: 0;
+
+	padding: 2rem;
+
+	border: 1px solid var(--flow-border-soft);
+	border-radius: var(--flow-radius-medium);
+
+	background: rgba(255, 255, 255, 0.015);
+}
+
+
+/* =========================================================
+   BUILT FOR PRACTICE — NUMBERS
+   ========================================================= */
+
+.principle-number {
+	margin: 0 0 2.5rem;
+
+	font-size: 0.78rem;
+	font-weight: 700;
+
+	letter-spacing: 0.12em;
+
+	color: var(--flow-blue);
+}
+
+
+/* =========================================================
+   BUILT FOR PRACTICE — CARD HEADINGS
+   ========================================================= */
+
+.principle-card h3 {
+	margin: 0 0 1rem;
+
+	font-size: clamp(1.45rem, 2vw, 1.8rem);
+	font-weight: 650;
+
+	line-height: 1.15;
+	letter-spacing: -0.025em;
+
+	color: var(--flow-text);
+}
+
+
+/* =========================================================
+   BUILT FOR PRACTICE — CARD COPY
+   ========================================================= */
+
+.principle-card > p:last-child {
+	margin: 0;
+
+	font-size: 1rem;
+	line-height: 1.7;
+
+	color: var(--flow-text-secondary);
+}
+
+
+/* =========================================================
+   BUILT FOR PRACTICE — RESPONSIVE
+   ========================================================= */
+
+@media screen and (max-width: 800px) {
+
+	.principles {
+		padding-top: 5rem;
+		padding-bottom: 6rem;
+	}
+
+	.principles-grid {
+		grid-template-columns: 1fr;
+
+		gap: 1rem;
+
+		margin-top: 2.5rem;
+	}
+}
+
+/* =========================================================
+   FLOW HELP
+   ========================================================= */
+
+.flow-help {
+	padding:
+		7rem
+		var(--flow-page-padding)
+		9rem;
+}
+
+
+/* =========================================================
+   FLOW HELP — PANEL
+   ========================================================= */
+
+.flow-help-panel {
+	display: grid;
+	grid-template-columns:
+		minmax(0, 1.05fr)
+		minmax(0, 0.95fr);
+
+	align-items: stretch;
+
+	overflow: hidden;
+
+	border: 1px solid var(--flow-border-soft);
+	border-radius: 1.25rem;
+
+	background:
+		linear-gradient(
+			135deg,
+			rgba(104, 119, 255, 0.055),
+			rgba(255, 81, 177, 0.025)
+		);
+}
+
+
+/* =========================================================
+   FLOW HELP — COPY
+   ========================================================= */
+
+.flow-help-copy {
+	padding: clamp(3rem, 6vw, 5rem);
+}
+
+.flow-help-copy h2 {
+	max-width: 650px;
+
+	margin: 0 0 1.75rem;
+
+	font-size: clamp(2.75rem, 4.5vw, 4rem);
+	font-weight: 650;
+
+	line-height: 1.05;
+	letter-spacing: -0.04em;
+
+	color: var(--flow-text);
+}
+
+.flow-help-copy > p:not(.eyebrow) {
+	max-width: 620px;
+
+	margin: 0 0 1.25rem;
+
+	font-size: 1.05rem;
+	line-height: 1.75;
+
+	color: var(--flow-text-secondary);
+}
+
+.flow-help-copy .button {
+	margin-top: 1.25rem;
+}
+
+
+/* =========================================================
+   FLOW HELP — VISUAL
+   ========================================================= */
+
+.flow-help-visual {
+	display: flex;
+
+	align-items: center;
+	justify-content: center;
+
+	min-height: 420px;
+
+	padding: 4rem;
+
+	border-left: 1px solid var(--flow-border-soft);
+
+	background:
+		radial-gradient(
+			circle at center,
+			rgba(104, 119, 255, 0.12),
+			transparent 65%
+		);
+}
+
+.flow-help-mark {
+	width: 100%;
+	max-width: 420px;
+
+	text-align: center;
+}
+
+.flow-help-mark img {
+	display: block;
+
+	width: min(100%, 300px);
+	height: auto;
+
+	margin: 0 auto 2.5rem;
+}
+
+.flow-help-title {
+	display: flex;
+
+	align-items: baseline;
+	justify-content: center;
+
+	gap: 0.55rem;
+
+	font-size: clamp(2rem, 4vw, 3.2rem);
+	font-weight: 700;
+
+	letter-spacing: -0.035em;
+}
+
+.flow-help-title span {
+	color: var(--flow-text);
+}
+
+.flow-help-title strong {
+	color: var(--flow-blue);
+}
+
+.flow-help-mark > p {
+	margin: 1rem 0 0;
+
+	color: var(--flow-text-secondary);
+
+	font-size: 0.9rem;
+	letter-spacing: 0.02em;
+}
+
+
+/* =========================================================
+   FLOW HELP — RESPONSIVE
+   ========================================================= */
+
+@media screen and (max-width: 850px) {
+
+    .flow-help {
+        padding-top: 2rem;
+        padding-bottom: 5rem;
+    }
+
+    .flow-help-panel {
+        grid-template-columns: 1fr;
+    }
+
+    .flow-help-copy {
+        padding: 3rem 1.5rem;
+    }
+
+    .flow-help-visual {
+        min-height: 300px;
+
+        border-top: 1px solid var(--flow-border-soft);
+        border-left: 0;
+    }
+
+}
+
+/* =========================================================
+   CONTACT / SOFT LAUNCH
+   ========================================================= */
+
+.contact-cta {
+	padding:
+		6rem
+		var(--flow-page-padding)
+		7rem;
+
+	background: var(--flow-surface);
+}
+
+
+/* =========================================================
+   CONTACT — PANEL
+   ========================================================= */
+
+.contact-panel {
+	position: relative;
+
+	padding: 3rem 0;
+
+	background: transparent;
+}
+
+
+/* =========================================================
+   CONTACT — COPY
+   ========================================================= */
+
+.contact-copy {
+	max-width: 780px;
+}
+
+.contact-copy h2 {
+	margin: 0 0 2rem;
+
+	font-size: clamp(3rem, 5vw, 4.5rem);
+	font-weight: 650;
+
+	line-height: 1.05;
+	letter-spacing: -0.04em;
+
+	color: var(--flow-text);
+}
+
+.contact-copy > p:not(.eyebrow) {
+	max-width: 680px;
+
+	margin: 0 0 1.25rem;
+
+	font-size: 1.1rem;
+	line-height: 1.75;
+
+	color: var(--flow-text-secondary);
+}
+
+.contact-copy .button {
+	margin-top: 1.5rem;
+}
+
+
+/* =========================================================
+   CONTACT — RESPONSIVE
+   ========================================================= */
+
+@media screen and (max-width: 800px) {
+
+	.contact-cta {
+		padding-top: 4rem;
+		padding-bottom: 3.5rem;
+	}
+
+	.contact-panel {
+		padding: 1rem 0;
+	}
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.site-footer {
+	padding:
+		2.5rem
+		var(--flow-page-padding);
+
+	border-top: 1px solid var(--flow-border-soft);
+
+	background: var(--flow-bg);
+}
+
+.footer-inner {
+	width: min(100%, var(--flow-content-width));
+	margin: 0 auto;
+
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+	gap: 2rem;
+}
+
+
+/* =========================================================
+   FOOTER — BRANDING
+   ========================================================= */
+
+.footer-logo {
+	display: block;
+
+	width: auto;
+	height: 34px;
+}
+
+.footer-inner > p {
+	margin: 0;
+
+	font-size: 0.9rem;
+	color: var(--flow-text-muted);
+}
+
+
+/* =========================================================
+   FOOTER — NAVIGATION
+   ========================================================= */
+
+.footer-nav {
+	display: flex;
+	align-items: center;
+
+	gap: 1.5rem;
+}
+
+.footer-nav a {
+	font-size: 0.9rem;
+	font-weight: 600;
+
+	color: var(--flow-text-secondary);
+	text-decoration: none;
+
+	transition: color 0.2s ease;
+}
+
+.footer-nav a:hover {
+	color: var(--flow-text);
+}
+
+
+/* =========================================================
+   FOOTER — RESPONSIVE
+   ========================================================= */
+
+@media screen and (max-width: 800px) {
+
+	.footer-inner {
+		flex-direction: column;
+		align-items: flex-start;
+
+		gap: 1.5rem;
+	}
+
+	.footer-nav {
+		flex-wrap: wrap;
+	}
+}
+
+/* =========================================================
+   HEADER — MOBILE
+   ========================================================= */
+
+@media screen and (max-width: 700px) {
+
+	.site-nav {
+		display: none;
+	}
+
+	.site-header {
+		padding:
+			1.25rem
+			var(--flow-page-padding);
+	}
+
+	.header-inner {
+		justify-content: flex-start;
+	}
+
+	.site-logo {
+		height: 46px;
+	}
+
+	.capability-card {
+	padding: 1.5rem;
+	}
+
+	.featured-tool-image:hover .featured-tool-screenshot {
+	transform: none;
+	box-shadow: none;
+	}
+
+	.featured-tool-image:hover {
+		border-color: var(--flow-border-soft);
+		box-shadow: none;
+	}
+
+	.hero {
+		min-height: auto;
+
+		padding-top: 8.5rem;
+		padding-bottom: 6rem;
+	}
+}

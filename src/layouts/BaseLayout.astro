@@ -1,0 +1,32 @@
+---
+import Header from "../components/Header.astro";
+import "../styles/global.css";
+
+interface Props {
+	title?: string;
+	description?: string;
+}
+
+const {
+	title = "Flow by Adapt",
+	description = "Flow is a growing suite of Revit tools designed and tested by experienced architectural designers to solve real-world workflow problems."
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+		<meta name="description" content={description} />
+
+		<title>{title}</title>
+	</head>
+
+	<body>
+		<Header />
+
+		<slot />
+	</body>
+</html>
