@@ -1,5 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+
+const base = import.meta.env.BASE_URL;
 ---
 
 <BaseLayout
@@ -104,7 +106,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 					<article class="capability-card">
 						<div class="capability-icon-wrap">
 							<img
-								src="/icons/project_icon.png"
+								src={`${base}icons/project_icon.png`}
 								alt=""
 								class="capability-icon"
 							/>
@@ -128,7 +130,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 					<article class="capability-card">
 						<div class="capability-icon-wrap">
 							<img
-								src="/icons/workspace_icon.png"
+								src={`${base}icons/workspace_icon.png`}
 								alt=""
 								class="capability-icon"
 							/>
@@ -152,7 +154,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 					<article class="capability-card">
 						<div class="capability-icon-wrap">
 							<img
-								src="/icons/content_icon.png"
+								src={`${base}icons/content_icon.png`}
 								alt=""
 								class="capability-icon"
 							/>
@@ -176,7 +178,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 					<article class="capability-card">
 						<div class="capability-icon-wrap">
 							<img
-								src="/icons/model_icon.png"
+								src={`${base}icons/model_icon.png`}
 								alt=""
 								class="capability-icon"
 							/>
@@ -228,7 +230,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 					<article class="featured-tool">
 						<div class="featured-tool-image">
 							<img
-								src="/screenshots/project_setup.png"
+								src={`${base}screenshots/project_setup.png`}
 								alt="Flow Project Setup window"
 								class="featured-tool-screenshot"
 							/>
@@ -256,7 +258,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 					<article class="featured-tool featured-tool-reverse">
 						<div class="featured-tool-image">
 							<img
-								src="/screenshots/content_browser.png"
+								src={`${base}screenshots/content_browser.png`}
 								alt="Flow Content Browser window"
 								class="featured-tool-screenshot"
 							/>
@@ -284,7 +286,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 					<article class="featured-tool">
 						<div class="featured-tool-image">
 							<img
-								src="/screenshots/openings_dashboard.png"
+								src={`${base}screenshots/openings_dashboard.png`}
 								alt="Flow Openings Dashboard window"
 								class="featured-tool-screenshot"
 							/>
@@ -312,7 +314,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 					<article class="featured-tool featured-tool-reverse">
 						<div class="featured-tool-image">
 							<img
-								src="/screenshots/pattern_manager.png"
+								src={`${base}screenshots/pattern_manager.png`}
 								alt="Flow Pattern Manager window"
 								class="featured-tool-screenshot"
 							/>
@@ -340,7 +342,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 					<article class="featured-tool">
 						<div class="featured-tool-image">
 							<img
-								src="/screenshots/model_health.png"
+								src={`${base}screenshots/model_health.png`}
 								alt="Flow Model Health window"
 								class="featured-tool-screenshot"
 							/>
@@ -368,7 +370,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 					<article class="featured-tool featured-tool-reverse">
 						<div class="featured-tool-image">
 							<img
-								src="/screenshots/risk_matrix.png"
+								src={`${base}screenshots/risk_matrix.png`}
 								alt="Flow Wall Risk Matrix window"
 								class="featured-tool-screenshot"
 							/>
@@ -506,7 +508,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 					<div class="flow-help-visual">
 						<div class="flow-help-mark">
 							<img
-								src="/branding/flow-logo-dark.png"
+								src={`${base}branding/flow-logo-dark.png`}
 								alt="Flow by Adapt"
 							/>
 
@@ -570,7 +572,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 		<div class="footer-inner">
 
 			<img
-				src="/branding/flow-logo-dark.png"
+				src={`${base}branding/flow-logo-dark.png`}
 				alt="Flow by Adapt"
 				class="footer-logo"
 			/>
