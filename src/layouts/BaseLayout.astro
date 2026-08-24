@@ -9,9 +9,14 @@ interface Props {
 }
 
 const {
-	title = "Flow by Adapt",
+	title = "Flow by Adapt | Revit Tools for Architectural Workflows",
 	description = "Flow is a growing suite of Revit tools designed and tested by experienced architectural designers to solve real-world workflow problems."
 } = Astro.props;
+
+const canonicalURL = new URL(
+	Astro.url.pathname,
+	Astro.site ?? Astro.url.origin
+);
 ---
 
 <!doctype html>
@@ -30,11 +35,26 @@ const {
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 
-		<link rel="icon" type="image/png" href="/flow-favicon.png" />
-
-		<meta name="description" content={description} />
-
+		<!-- Primary SEO -->
 		<title>{title}</title>
+		<meta name="description" content={description} />
+		<meta name="robots" content="index, follow" />
+		<link rel="canonical" href={canonicalURL} />
+
+		<!-- Open Graph -->
+		<meta property="og:type" content="website" />
+		<meta property="og:site_name" content="Flow by Adapt" />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:url" content={canonicalURL} />
+
+		<!-- Social sharing -->
+		<meta name="twitter:card" content="summary" />
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:description" content={description} />
+
+		<!-- Branding -->
+		<link rel="icon" type="image/png" href="/flow-favicon.png" />
 	</head>
 
 	<body>

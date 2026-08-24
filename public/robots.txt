@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://flowbyadapt.com/sitemap-index.xml
