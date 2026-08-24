@@ -1,5 +1,6 @@
 ---
 import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
 import "../styles/global.css";
 
 interface Props {
@@ -29,6 +30,10 @@ const {
 	<body>
 		<Header />
 
-		<slot />
+		<main>
+			<slot />
+		</main>
+
+		<Footer />
 	</body>
 </html>
