@@ -2,5 +2,6 @@
 import { defineConfig } from 'astro/config';
 
 export default defineConfig({
-	site: 'https://flowbyadapt.com',
+  site: 'https://flowbyadapt.github.io',
+  base: '/Flow.Website',
 });
