@@ -3,37 +3,45 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 ---
 
 <footer class="site-footer">
-	<div class="footer-inner">
-		<img
-			src={`${base}/branding/flow-logo-dark.png`}
-			alt="Flow by Adapt"
-			class="footer-logo"
-		/>
+    <div class="footer-inner">
 
-		<p>
-			Revit tools shaped by architectural practice.
-		</p>
+        <img
+            src={`${base}/branding/flow-logo-dark.png`}
+            alt="Flow by Adapt"
+            class="footer-logo"
+        />
 
-		<nav class="footer-nav" aria-label="Footer navigation">
-			<a href="/#tools">
-				Tools
-			</a>
+        <p>
+            Revit tools shaped by architectural practice.
+        </p>
 
-			<a
-				href="https://help.flowbyadapt.com/"
-				target="_blank"
-				rel="noopener noreferrer"
-			>
-				Flow.Help
-			</a>
+        <nav class="footer-nav" aria-label="Footer navigation">
 
-			<a
-				href="https://help.flowbyadapt.com/legal/terms-of-use/"
-				target="_blank"
-				rel="noopener noreferrer"
-			>
-				Terms of Use &amp; Privacy
-			</a>
-		</nav>
-	</div>
+            <a href={`${base}/`}>
+                Home
+            </a>
+
+            <a href={`${base}/tools`}>
+                Tools
+            </a>
+
+            <a
+                href="https://help.flowbyadapt.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                Flow.Help
+            </a>
+
+            <a
+                href="https://help.flowbyadapt.com/legal/terms-of-use/"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                Terms of Use &amp; Privacy
+            </a>
+
+        </nav>
+
+    </div>
 </footer>

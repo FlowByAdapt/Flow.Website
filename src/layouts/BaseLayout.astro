@@ -6,17 +6,50 @@ import "../styles/global.css";
 interface Props {
 	title?: string;
 	description?: string;
+	canonicalPath?: string;
+	image?: string;
 }
 
 const {
 	title = "Flow by Adapt | Revit Tools for Architectural Workflows",
-	description = "Flow is a growing suite of Revit tools designed and tested by experienced architectural designers to solve real-world workflow problems."
+	description = "Flow is a growing suite of Revit tools designed and tested by experienced architectural designers to solve real-world workflow problems.",
+	canonicalPath = Astro.url.pathname,
+	image = "/branding/flow-logo-dark.png"
 } = Astro.props;
 
+const siteURL = Astro.site ?? Astro.url.origin;
+
 const canonicalURL = new URL(
-	Astro.url.pathname,
-	Astro.site ?? Astro.url.origin
+	canonicalPath,
+	siteURL
 );
+
+const socialImageURL = new URL(
+	image,
+	siteURL
+);
+
+const structuredData = {
+	"@context": "https://schema.org",
+	"@graph": [
+		{
+			"@type": "Organization",
+			"@id": `${siteURL}#organization`,
+			"name": "Flow by Adapt",
+			"url": siteURL.toString()
+		},
+		{
+			"@type": "WebSite",
+			"@id": `${siteURL}#website`,
+			"url": siteURL.toString(),
+			"name": "Flow by Adapt",
+			"description": "Practical Revit tools for architectural workflows.",
+			"publisher": {
+				"@id": `${siteURL}#organization`
+			}
+		}
+	]
+};
 ---
 
 <!doctype html>
@@ -47,11 +80,19 @@ const canonicalURL = new URL(
 		<meta property="og:title" content={title} />
 		<meta property="og:description" content={description} />
 		<meta property="og:url" content={canonicalURL} />
+		<meta property="og:image" content={socialImageURL} />
 
 		<!-- Social sharing -->
-		<meta name="twitter:card" content="summary" />
+		<meta name="twitter:card" content="summary_large_image" />
 		<meta name="twitter:title" content={title} />
 		<meta name="twitter:description" content={description} />
+		<meta name="twitter:image" content={socialImageURL} />
+
+		<!-- Structured data -->
+		<script
+			type="application/ld+json"
+			set:html={JSON.stringify(structuredData)}
+		></script>
 
 		<!-- Branding -->
 		<link rel="icon" type="image/png" href="/flow-favicon.png" />

@@ -1,0 +1,119 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+---
+
+<BaseLayout
+    title="Contact | Flow by Adapt"
+    description="Get in touch with Flow by Adapt about the Flow Revit toolset, its development, or support and documentation."
+>
+
+    <!-- =====================================================
+         CONTACT — INTRO
+         ===================================================== -->
+
+    <section class="contact-page">
+
+        <div class="contact-page-inner">
+
+            <p class="eyebrow">CONTACT</p>
+
+            <h1>
+                Interested in Flow?
+            </h1>
+
+            <p class="contact-page-lead">
+                Flow is continuing to develop through real architectural
+                project work. If you'd like to know more about the tools,
+                discuss Flow, or get in touch about its development,
+                we'd be happy to hear from you.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         CONTACT — OPTIONS
+         ===================================================== -->
+
+    <section class="contact-options">
+
+        <div class="contact-options-inner">
+
+            <!-- GENERAL ENQUIRIES -->
+
+            <article class="contact-option">
+
+                <p class="eyebrow">GENERAL ENQUIRIES</p>
+
+                <h2>
+                    Get in touch.
+                </h2>
+
+                <p>
+                    Questions about Flow, the tools or where the project is
+                    heading? Send us an email and we'll get back to you.
+                </p>
+
+                <a
+                    class="button primary"
+                    href="#"
+                    id="contact-page-email"
+                >
+                    Email Flow
+                </a>
+
+            </article>
+
+
+            <!-- FLOW HELP -->
+
+            <article class="contact-option">
+
+                <p class="eyebrow">FLOW.HELP</p>
+
+                <h2>
+                    Looking for help?
+                </h2>
+
+                <p>
+                    Flow.Help contains documentation, workflow guidance and
+                    troubleshooting information for the Flow toolset.
+                </p>
+
+                <a
+                    class="button secondary"
+                    href="https://help.flowbyadapt.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Open Flow.Help
+                </a>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <script>
+        const contactButton =
+            document.getElementById("contact-page-email");
+
+        contactButton?.addEventListener("click", (event) => {
+            event.preventDefault();
+
+            const user = "hello";
+            const domain = "flowbyadapt.com";
+            const subject = "Flow by Adapt Enquiry";
+
+            window.location.href =
+                `mailto:${user}@${domain}?subject=${encodeURIComponent(subject)}`;
+        });
+    </script>
+
+</BaseLayout>

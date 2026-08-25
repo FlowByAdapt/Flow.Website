@@ -5,579 +5,461 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 ---
 
 <BaseLayout
-	title="Flow by Adapt"
-	description="Flow is a growing suite of Revit tools designed and tested by experienced architectural designers to solve real-world problems encountered in everyday project work."
+    title="Flow by Adapt | Revit Tools for Architectural Workflows"
+    description="Flow is a growing suite of Revit tools designed and tested by experienced architectural designers to improve everyday BIM and documentation workflows."
 >
 
-		<!-- =====================================================
-		     HERO
-		     ===================================================== -->
-
-		<section class="hero">
-			<div class="hero-content">
-				<h1>
-					Built in practice.<br />
-					Designed for real Revit workflows.
-				</h1>
-
-				<p class="intro">
-					Flow is a growing suite of Revit tools designed and tested by
-					experienced architectural designers to solve real-world problems
-					encountered in everyday project work.
-				</p>
-
-				<div class="actions">
-					<a class="button primary" href="#origin">
-						Discover Flow
-					</a>
-
-					<a
-						class="button secondary"
-						href="https://help.flowbyadapt.com/"
-						target="_blank"
-						rel="noopener noreferrer"
-					>
-						Flow.Help
-					</a>
-				</div>
-			</div>
-		</section>
-
-
-		<!-- =====================================================
-		     WHY FLOW EXISTS
-		     ===================================================== -->
-
-		<section class="origin" id="origin">
-			<div class="section-content">
-				<p class="eyebrow">WHY FLOW EXISTS</p>
-
-				<h2>
-					Born from real project work.
-				</h2>
-
-				<div class="origin-copy">
-					<p>
-						Flow did not begin as a software product looking for a problem.
-						It grew from years of working in Revit and repeatedly encountering
-						tasks that were slower, more repetitive or more difficult than
-						they needed to be.
-					</p>
-
-					<p>
-						Each Flow tool starts with a real architectural workflow problem.
-						It is developed, tested and refined through use in practice before
-						becoming part of the wider Flow toolset.
-					</p>
-
-					<p>
-						The result is a growing collection of tools shaped by continued use
-						on real architectural projects.
-					</p>
-				</div>
-			</div>
-		</section>
-
-
-		<!-- =====================================================
-		     WHAT FLOW DOES
-		     ===================================================== -->
-
-		<section class="capabilities" id="tools">
-			<div class="section-content">
-				<div class="section-heading">
-					<p class="eyebrow">WHAT FLOW DOES</p>
-
-					<h2>
-						Tools for the work between the big tasks.
-					</h2>
-
-					<p class="section-intro">
-						Flow brings together a growing set of Revit tools focused on
-						project setup, working environments, content and model workflows.
-					</p>
-				</div>
-
-
-				<!-- PROJECT -->
-
-				<div class="capability-grid">
-					<article class="capability-card">
-						<div class="capability-icon-wrap">
-							<img
-								src={`${base}/icons/project_icon.png`}
-								alt=""
-								class="capability-icon"
-							/>
-						</div>
+    <!-- =====================================================
+         HERO
+         ===================================================== -->
 
-						<p class="capability-label">PROJECT</p>
+    <section class="hero">
+        <div class="hero-content">
 
-						<h3>
-							Start projects consistently.
-						</h3>
+            <h1>
+                Built in practice.<br />
+                Designed for real Revit workflows.
+            </h1>
 
-						<p>
-							Support repeatable project setup, information and standards
-							from the beginning of a Revit project.
-						</p>
-					</article>
+            <p class="intro">
+                Flow is a growing suite of Revit tools designed and tested by
+                experienced architectural designers to solve real-world problems
+                encountered in everyday project work.
+            </p>
 
+            <div class="actions">
 
-					<!-- WORKSPACE -->
+                <a
+                    class="button primary"
+                    href={`${base}/tools`}
+                >
+                    Explore Flow tools
+                </a>
 
-					<article class="capability-card">
-						<div class="capability-icon-wrap">
-							<img
-								src={`${base}/icons/workspace_icon.png`}
-								alt=""
-								class="capability-icon"
-							/>
-						</div>
-
-						<p class="capability-label">WORKSPACE</p>
+                <a
+                    class="button secondary"
+                    href={`${base}/about`}
+                >
+                    About Flow
+                </a>
 
-						<h3>
-							Make everyday Revit easier to navigate.
-						</h3>
+            </div>
 
-						<p>
-							Find commands quickly, manage working environments and keep
-							common workspace controls close at hand.
-						</p>
-					</article>
-
-
-					<!-- CONTENT -->
+        </div>
+    </section>
 
-					<article class="capability-card">
-						<div class="capability-icon-wrap">
-							<img
-								src={`${base}/icons/content_icon.png`}
-								alt=""
-								class="capability-icon"
-							/>
-						</div>
-
-						<p class="capability-label">CONTENT</p>
-
-						<h3>
-							Find and maintain the content you need.
-						</h3>
-
-						<p>
-							Browse, load, prepare and manage Revit content using tools
-							designed around real production workflows.
-						</p>
-					</article>
-
-
-					<!-- MODEL -->
-
-					<article class="capability-card">
-						<div class="capability-icon-wrap">
-							<img
-								src={`${base}/icons/model_icon.png`}
-								alt=""
-								class="capability-icon"
-							/>
-						</div>
-
-						<p class="capability-label">MODEL</p>
-
-						<h3>
-							Reduce repetitive modelling and documentation work.
-						</h3>
-
-						<p>
-							Support model coordination, documentation, quality review and
-							other repetitive project tasks with focused Revit tools.
-						</p>
-					</article>
-				</div>
-			</div>
-		</section>
-
-
-		<!-- =====================================================
-		     SELECTED TOOLS
-		     ===================================================== -->
-
-		<section class="featured-tools">
-			<div class="section-content">
-
-				<div class="section-heading">
-					<p class="eyebrow">SELECTED TOOLS</p>
-
-					<h2>
-						Real workflows. Focused tools.
-					</h2>
-
-					<p class="section-intro">
-						Flow brings together practical Revit tools developed around the
-						everyday tasks architectural teams encounter on real projects.
-					</p>
-				</div>
-
-
-				<div class="featured-tool-list">
-
-					<!-- =================================================
-					     PROJECT SETUP
-					     ================================================= -->
-
-					<article class="featured-tool">
-						<div class="featured-tool-image">
-							<img
-								src={`${base}/screenshots/project_setup.png`}
-								alt="Flow Project Setup window"
-								class="featured-tool-screenshot"
-							/>
-						</div>
-
-						<div class="featured-tool-copy">
-							<p class="featured-tool-category">PROJECT</p>
-
-							<h3>
-								Project Setup
-							</h3>
-
-							<p>
-								Create and review Revit projects using repeatable project
-								profiles, templates, information and office standards.
-							</p>
-						</div>
-					</article>
-
-
-					<!-- =================================================
-					     CONTENT BROWSER
-					     ================================================= -->
-
-					<article class="featured-tool featured-tool-reverse">
-						<div class="featured-tool-image">
-							<img
-								src={`${base}/screenshots/content_browser.png`}
-								alt="Flow Content Browser window"
-								class="featured-tool-screenshot"
-							/>
-						</div>
-
-						<div class="featured-tool-copy">
-							<p class="featured-tool-category">CONTENT</p>
-
-							<h3>
-								Content Browser
-							</h3>
-
-							<p>
-								Browse, search, review and load approved Revit content from
-								a central library without leaving your project workflow.
-							</p>
-						</div>
-					</article>
-
-
-					<!-- =================================================
-					     OPENINGS MANAGER
-					     ================================================= -->
-
-					<article class="featured-tool">
-						<div class="featured-tool-image">
-							<img
-								src={`${base}/screenshots/openings_dashboard.png`}
-								alt="Flow Openings Dashboard window"
-								class="featured-tool-screenshot"
-							/>
-						</div>
-
-						<div class="featured-tool-copy">
-							<p class="featured-tool-category">MODEL</p>
-
-							<h3>
-								Openings Manager
-							</h3>
-
-							<p>
-								Review, standardise and document windows, doors and related
-								opening workflows in a coordinated interface.
-							</p>
-						</div>
-					</article>
-
-
-					<!-- =================================================
-					     PATTERN MANAGER
-					     ================================================= -->
-
-					<article class="featured-tool featured-tool-reverse">
-						<div class="featured-tool-image">
-							<img
-								src={`${base}/screenshots/pattern_manager.png`}
-								alt="Flow Pattern Manager window"
-								class="featured-tool-screenshot"
-							/>
-						</div>
-
-						<div class="featured-tool-copy">
-							<p class="featured-tool-category">MODEL</p>
-
-							<h3>
-								Pattern Manager
-							</h3>
-
-							<p>
-								Browse, manage and create Revit fill patterns with a shared
-								library, project tools and visual pattern previews.
-							</p>
-						</div>
-					</article>
-
-
-					<!-- =================================================
-					     MODEL HEALTH
-					     ================================================= -->
-
-					<article class="featured-tool">
-						<div class="featured-tool-image">
-							<img
-								src={`${base}/screenshots/model_health.png`}
-								alt="Flow Model Health window"
-								class="featured-tool-screenshot"
-							/>
-						</div>
-
-						<div class="featured-tool-copy">
-							<p class="featured-tool-category">MODEL</p>
-
-							<h3>
-								Model Health
-							</h3>
-
-							<p>
-								Review common model-quality issues and surface areas that
-								need attention before they become larger project problems.
-							</p>
-						</div>
-					</article>
-
-
-					<!-- =================================================
-					     RISK MATRIX
-					     ================================================= -->
-
-					<article class="featured-tool featured-tool-reverse">
-						<div class="featured-tool-image">
-							<img
-								src={`${base}/screenshots/risk_matrix.png`}
-								alt="Flow Wall Risk Matrix window"
-								class="featured-tool-screenshot"
-							/>
-						</div>
-
-						<div class="featured-tool-copy">
-							<p class="featured-tool-category">MODEL</p>
-
-							<h3>
-								Risk Matrix
-							</h3>
-
-							<p>
-								Assess and document external moisture-risk information
-								directly against building faces within the Revit model.
-							</p>
-						</div>
-					</article>
-
-				</div>
-			</div>
-		</section>
-		
-		<!-- =====================================================
-		     BUILT FOR PRACTICE
-		     ===================================================== -->
-
-		<section class="principles">
-			<div class="section-content">
-
-				<div class="section-heading">
-					<p class="eyebrow">BUILT FOR PRACTICE</p>
-
-					<h2>
-						Designed around the way Revit is actually used.
-					</h2>
-
-					<p class="section-intro">
-						Flow is shaped by everyday architectural project work,
-						with tools designed to fit naturally into existing Revit workflows.
-					</p>
-				</div>
-
-
-				<div class="principles-grid">
-
-					<article class="principle-card">
-						<p class="principle-number">01</p>
-
-						<h3>
-							Built by practitioners.
-						</h3>
-
-						<p>
-							Flow tools begin with problems encountered during real
-							architectural project work and are tested through continued
-							use in practice.
-						</p>
-					</article>
-
-
-					<article class="principle-card">
-						<p class="principle-number">02</p>
-
-						<h3>
-							Focused, not bloated.
-						</h3>
-
-						<p>
-							Each tool is designed to improve a specific part of the
-							Revit workflow rather than introduce another complicated
-							system to manage.
-						</p>
-					</article>
-
-
-					<article class="principle-card">
-						<p class="principle-number">03</p>
-
-						<h3>
-							Designed as one system.
-						</h3>
-
-						<p>
-							Consistent interfaces, shared conventions and integrated
-							workflows make individual tools feel like parts of the
-							same environment.
-						</p>
-					</article>
-
-				</div>
-			</div>
-		</section>
-
-
-		<!-- =====================================================
-		     FLOW HELP
-		     ===================================================== -->
-
-		<section class="flow-help">
-			<div class="section-content">
-
-				<div class="flow-help-panel">
-
-					<div class="flow-help-copy">
-						<p class="eyebrow">FLOW.HELP</p>
-
-						<h2>
-							Documentation that grows with the tools.
-						</h2>
-
-						<p>
-							Flow.Help provides structured guidance for the Flow toolset,
-							with practical instructions for everyday workflows,
-							supporting information and troubleshooting.
-						</p>
-
-						<p>
-							As Flow develops, the documentation develops with it —
-							providing a central reference for understanding and using
-							the tools effectively.
-						</p>
-
-						<a
-							class="button primary"
-							href="https://help.flowbyadapt.com/"
-							target="_blank"
-							rel="noopener noreferrer"
-						>
-							Open Flow.Help
-						</a>
-					</div>
-
-
-					<div class="flow-help-visual">
-						<div class="flow-help-mark">
-							<img
-								src={`${base}/branding/flow-logo-dark.png`}
-								alt="Flow by Adapt"
-							/>
-
-							<div class="flow-help-title">
-								<span>FLOW</span>
-								<strong>HELP</strong>
-							</div>
-
-							<p>
-								User guides · Workflows · Troubleshooting
-							</p>
-						</div>
-					</div>
-
-				</div>
-
-			</div>
-		</section>
-		<!-- =====================================================
-		     CONTACT / SOFT LAUNCH
-		     ===================================================== -->
-
-		<section class="contact-cta" id="contact">
-			<div class="section-content">
-
-				<div class="contact-panel">
-
-				<div class="contact-copy">
-				<p class="eyebrow">FLOW UPDATES</p>
-
-				<h2>
-					Follow Flow as it develops.
-				</h2>
-
-				<p>
-					Flow is continuing to evolve through use on real architectural
-					projects, with new tools, workflow improvements and ideas being
-					developed as practical needs emerge.
-				</p>
-
-				<p>
-					Interested in Flow or want to follow its development? Get in touch.
-				</p>
-
-				<a
-					class="button primary"
-					href="#"
-					id="contact-email"
-				>
-					Get in Touch
-				</a>
-				</div>
-
-				</div>
-
-			</div>
-		</section>
-
-	<script>
-	const contactButton = document.getElementById("contact-email");
-
-	contactButton?.addEventListener("click", (event) => {
-		event.preventDefault();
-
-		const user = "hello";
-		const domain = "flowbyadapt.com";
-		const subject = "Flow by Adapt Enquiry";
-
-		window.location.href =
-			`mailto:${user}@${domain}?subject=${encodeURIComponent(subject)}`;
-	});
-</script>
+
+    <!-- =====================================================
+         ABOUT FLOW
+         ===================================================== -->
+
+    <section class="origin">
+
+        <div class="section-content">
+
+            <p class="eyebrow">ABOUT FLOW</p>
+
+            <h2>
+                Built from architectural practice.
+            </h2>
+
+            <div class="origin-copy">
+
+                <p>
+                    Flow grew from tools created to solve everyday problems
+                    encountered while working in Revit — repetitive tasks,
+                    inconsistent processes and workflows that took more time
+                    than they should.
+                </p>
+
+                <p>
+                    What began with Dynamo and scripting has gradually developed
+                    into a connected suite of native Revit tools, shaped and
+                    tested through real architectural project work.
+                </p>
+
+            </div>
+
+            <a
+                class="text-link"
+                href={`${base}/about`}
+            >
+                Read the Flow story →
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         WHAT FLOW DOES
+         ===================================================== -->
+
+    <section class="capabilities" id="tools">
+
+        <div class="section-content">
+
+            <div class="section-heading">
+
+                <p class="eyebrow">WHAT FLOW DOES</p>
+
+                <h2>
+                    Tools for the work between the big tasks.
+                </h2>
+
+                <p class="section-intro">
+                    Flow brings together a growing set of Revit tools focused on
+                    project setup, working environments, content and model workflows.
+                </p>
+
+            </div>
+
+
+            <div class="capability-grid">
+
+                <!-- PROJECT -->
+
+                <article class="capability-card">
+
+                    <div class="capability-icon-wrap">
+                        <img
+                            src={`${base}/icons/project_icon.png`}
+                            alt=""
+                            class="capability-icon"
+                        />
+                    </div>
+
+                    <p class="capability-label">PROJECT</p>
+
+                    <h3>
+                        Start projects consistently.
+                    </h3>
+
+                    <p>
+                        Support repeatable project setup, information and standards
+                        from the beginning of a Revit project.
+                    </p>
+
+                </article>
+
+
+                <!-- WORKSPACE -->
+
+                <article class="capability-card">
+
+                    <div class="capability-icon-wrap">
+                        <img
+                            src={`${base}/icons/workspace_icon.png`}
+                            alt=""
+                            class="capability-icon"
+                        />
+                    </div>
+
+                    <p class="capability-label">WORKSPACE</p>
+
+                    <h3>
+                        Make everyday Revit easier to navigate.
+                    </h3>
+
+                    <p>
+                        Find commands quickly, manage working environments and keep
+                        common workspace controls close at hand.
+                    </p>
+
+                </article>
+
+
+                <!-- CONTENT -->
+
+                <article class="capability-card">
+
+                    <div class="capability-icon-wrap">
+                        <img
+                            src={`${base}/icons/content_icon.png`}
+                            alt=""
+                            class="capability-icon"
+                        />
+                    </div>
+
+                    <p class="capability-label">CONTENT</p>
+
+                    <h3>
+                        Find and maintain the content you need.
+                    </h3>
+
+                    <p>
+                        Browse, load, prepare and manage Revit content using tools
+                        designed around real production workflows.
+                    </p>
+
+                </article>
+
+
+                <!-- MODEL -->
+
+                <article class="capability-card">
+
+                    <div class="capability-icon-wrap">
+                        <img
+                            src={`${base}/icons/model_icon.png`}
+                            alt=""
+                            class="capability-icon"
+                        />
+                    </div>
+
+                    <p class="capability-label">MODEL</p>
+
+                    <h3>
+                        Reduce repetitive modelling and documentation work.
+                    </h3>
+
+                    <p>
+                        Support model coordination, documentation, quality review and
+                        other repetitive project tasks with focused Revit tools.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         EXPLORE FLOW TOOLS
+         ===================================================== -->
+
+    <section class="tools-cta">
+
+        <div class="section-content">
+
+            <div class="tools-cta-inner">
+
+                <p class="eyebrow">FLOW TOOLS</p>
+
+                <h2>
+                    Practical tools for everyday Revit work.
+                </h2>
+
+                <p>
+                    Flow supports project setup, content, workspace, modelling,
+                    documentation and model review through focused tools developed
+                    around real architectural workflows.
+                </p>
+
+                <a
+                    class="button primary"
+                    href={`${base}/tools`}
+                >
+                    Explore all Flow tools
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         BUILT FOR PRACTICE
+         ===================================================== -->
+
+    <section class="principles">
+
+        <div class="section-content">
+
+            <div class="section-heading">
+
+                <p class="eyebrow">BUILT FOR PRACTICE</p>
+
+                <h2>
+                    Designed around the way Revit is actually used.
+                </h2>
+
+                <p class="section-intro">
+                    Flow is shaped by everyday architectural project work,
+                    with tools designed to fit naturally into existing Revit workflows.
+                </p>
+
+            </div>
+
+
+            <div class="principles-grid">
+
+                <article class="principle-card">
+
+                    <p class="principle-number">01</p>
+
+                    <h3>
+                        Built by practitioners.
+                    </h3>
+
+                    <p>
+                        Flow tools begin with problems encountered during real
+                        architectural project work and are tested through continued
+                        use in practice.
+                    </p>
+
+                </article>
+
+
+                <article class="principle-card">
+
+                    <p class="principle-number">02</p>
+
+                    <h3>
+                        Focused, not bloated.
+                    </h3>
+
+                    <p>
+                        Each tool is designed to improve a specific part of the
+                        Revit workflow rather than introduce another complicated
+                        system to manage.
+                    </p>
+
+                </article>
+
+
+                <article class="principle-card">
+
+                    <p class="principle-number">03</p>
+
+                    <h3>
+                        Designed as one system.
+                    </h3>
+
+                    <p>
+                        Consistent interfaces, shared conventions and integrated
+                        workflows make individual tools feel like parts of the
+                        same environment.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         FLOW HELP
+         ===================================================== -->
+
+    <section class="flow-help">
+
+        <div class="section-content">
+
+            <div class="flow-help-panel">
+
+                <div class="flow-help-copy">
+
+                    <p class="eyebrow">FLOW.HELP</p>
+
+                    <h2>
+                        Documentation that grows with the tools.
+                    </h2>
+
+                    <p>
+                        Flow.Help provides structured guidance for the Flow toolset,
+                        with practical instructions for everyday workflows,
+                        supporting information and troubleshooting.
+                    </p>
+
+                    <p>
+                        As Flow develops, the documentation develops with it —
+                        providing a central reference for understanding and using
+                        the tools effectively.
+                    </p>
+
+                    <a
+                        class="button primary"
+                        href="https://help.flowbyadapt.com/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Open Flow.Help
+                    </a>
+
+                </div>
+
+
+                <div class="flow-help-visual">
+
+                    <div class="flow-help-mark">
+
+                        <img
+                            src={`${base}/branding/flow-logo-dark.png`}
+                            alt="Flow by Adapt"
+                        />
+
+                        <div class="flow-help-title">
+                            <span>FLOW</span>
+                            <strong>HELP</strong>
+                        </div>
+
+                        <p>
+                            User guides · Workflows · Troubleshooting
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         CONTACT / SOFT LAUNCH
+         ===================================================== -->
+
+    <section class="contact-cta" id="contact">
+
+        <div class="section-content">
+
+            <div class="contact-panel">
+
+                <div class="contact-copy">
+
+                    <p class="eyebrow">FLOW UPDATES</p>
+
+                    <h2>
+                        Follow Flow as it develops.
+                    </h2>
+
+                    <p>
+                        Flow is continuing to evolve through use on real architectural
+                        projects, with new tools, workflow improvements and ideas being
+                        developed as practical needs emerge.
+                    </p>
+
+                    <p>
+                        Interested in Flow or want to follow its development?
+                        Get in touch.
+                    </p>
+
+                    <a
+                        class="button primary"
+                        href={`${base}/contact`}
+                    >
+                        Get in Touch
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
 </BaseLayout>

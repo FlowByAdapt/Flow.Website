@@ -1,0 +1,229 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+---
+
+<BaseLayout
+	title="About Flow | Flow by Adapt"
+	description="The story behind Flow by Adapt — Revit tools developed from real architectural practice and everyday project workflows."
+>
+	<section class="about-page">
+		<div class="about-intro">
+			<p class="eyebrow">ABOUT FLOW</p>
+
+			<h1>
+				Built from practice,<br />
+				not from a product brief.
+			</h1>
+
+			<p class="about-lead">
+				Flow grew out of everyday architectural project work —
+				solving repetitive tasks, improving consistency and making
+				complex Revit workflows easier to manage.
+			</p>
+		</div>
+	</section>
+
+    <section class="about-story">
+	<div class="about-story-inner">
+		<div class="about-story-heading">
+			<p class="eyebrow">WHERE IT STARTED</p>
+
+			<h2>
+				Flow wasn't originally intended
+				to become a product.
+			</h2>
+		</div>
+
+		<div class="about-story-copy">
+			<p>
+				It began with the same problems architectural teams encounter
+				every day: repetitive tasks, inconsistent processes and Revit
+				workflows that required more time and attention than they should.
+			</p>
+
+			<p>
+				The first tools were developed simply to make project work
+				better — reducing manual steps, making standards easier to
+				maintain and giving designers more reliable ways to complete
+				recurring tasks.
+			</p>
+
+			<p>
+				Over time, those individual solutions began to grow into
+				something more connected. Flow developed from that collection
+				of practical tools into a broader approach to improving how
+				architectural work gets done in Revit.
+			</p>
+		</div>
+	</div>
+</section>
+
+<section class="about-evolution">
+	<div class="about-evolution-inner">
+        <div class="about-evolution-heading">
+            <p class="eyebrow">HOW IT EVOLVED</p>
+
+            <h2>
+                From visual scripts to 
+                native Revit tools.
+            </h2>
+
+            <div
+                class="tech-cloud"
+                aria-label="Technologies used during the development of Flow"
+            >
+                <img
+                    src={`${base}/branding/tech/dynamo.png`}
+                    alt="Dynamo"
+                    class="tech-cloud-icon tech-cloud-icon--dynamo"
+                />
+
+                <img
+                    src={`${base}/branding/tech/python.png`}
+                    alt="Python"
+                    class="tech-cloud-icon tech-cloud-icon--python"
+                />
+
+                <img
+                    src={`${base}/branding/tech/ironpython.png`}
+                    alt="IronPython"
+                    class="tech-cloud-icon tech-cloud-icon--ironpython"
+                />
+
+                <img
+                    src={`${base}/branding/tech/pyrevit.png`}
+                    alt="pyRevit"
+                    class="tech-cloud-icon tech-cloud-icon--pyrevit"
+                />
+
+                <img
+                    src={`${base}/branding/tech/csharp.png`}
+                    alt="C#"
+                    class="tech-cloud-icon tech-cloud-icon--csharp"
+                />
+
+                <img
+                    src={`${base}/branding/tech/dotnet.png`}
+                    alt=".NET"
+                    class="tech-cloud-icon tech-cloud-icon--dotnet"
+                />
+            </div>
+        </div>
+
+        <div class="about-evolution-copy">
+            <p>
+                Flow's development began with Dynamo — using visual scripting to
+                automate repetitive Revit tasks and explore better ways of working.
+                As those workflows became more ambitious, development moved into
+                Python, initially using IronPython and later CPython 3.
+            </p>
+
+            <p>
+                That progression allowed increasingly capable tools to be developed,
+                but it also exposed the limitations of building larger, more integrated
+                workflows around scripting environments.
+            </p>
+
+            <p>
+                Flow eventually moved to native C#, allowing much deeper integration
+                with Revit and providing the foundation for more robust interfaces,
+                shared services and connected tools that behave as a cohesive
+                application rather than a collection of individual scripts.
+            </p>
+
+            <p>
+                The technology has changed considerably along the way, but the purpose
+                has remained the same: use automation to make everyday architectural
+                project work simpler, more consistent and easier to manage.
+            </p>
+        </div>
+	</div>
+</section>
+
+<section class="about-practice">
+    <div class="about-practice-inner">
+
+        <div class="about-practice-heading">
+            <p class="eyebrow">BUILT IN PRACTICE</p>
+
+            <h2>
+                Developed alongside
+                real project work.
+            </h2>
+        </div>
+
+        <div class="about-practice-copy">
+            <p>
+                Flow isn't developed in isolation from the workflows it is
+                intended to improve. The tools are shaped through everyday
+                architectural project work, where they can be tested against
+                real models, real deadlines and the practical demands of
+                delivering projects in Revit.
+            </p>
+
+            <p>
+                That connection to practice helps keep the focus on useful,
+                practical improvements — reducing unnecessary steps, making
+                recurring processes more consistent and helping designers
+                spend less time managing the mechanics of their workflow.
+            </p>
+
+            <p>
+                Flow is intended to fit around and improve the way architectural
+                teams already work — not replace it.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+
+<section class="about-now">
+    <div class="about-now-inner">
+
+        <p class="eyebrow">WHERE IT IS NOW</p>
+
+        <h2>
+            One toolkit.<br />
+            Built around architectural practice.
+        </h2>
+
+        <p class="about-now-lead">
+            Flow has grown into a connected suite of Revit tools supporting
+            project setup, workspace, content, modelling, documentation and
+            model review.
+        </p>
+
+        <p class="about-now-copy">
+            The scope has grown, but the underlying idea remains the same:
+            identify the parts of everyday project work that can be made
+            simpler, more reliable or easier to manage, and build practical
+            tools around them.
+        </p>
+
+        <p class="about-now-copy">
+            Flow continues to develop in response to real project workflows.
+            New tools and improvements are driven by the same question that
+            started it: can this part of the process be made better?
+        </p>
+
+        <div class="about-now-actions">
+            <a class="about-now-button about-now-button-primary" href={`${base}/tools`}>
+                Explore Flow tools
+            </a>
+
+            <a
+                class="about-now-button about-now-button-secondary"
+                href="https://help.flowbyadapt.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                Flow.Help
+            </a>
+        </div>
+
+    </div>
+</section>
+</BaseLayout>
