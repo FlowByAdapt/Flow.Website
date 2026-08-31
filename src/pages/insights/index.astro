@@ -1,0 +1,93 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+
+const insights = (await getCollection("insights"))
+	.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+---
+
+<BaseLayout
+	title="Insights | Flow by Adapt"
+	description="Ideas, observations and lessons from building better Revit workflows."
+>
+	<section class="insights-page">
+		<div class="insights-intro">
+
+			<p class="eyebrow">FLOW INSIGHTS</p>
+
+			<h1>Ideas from building better Revit workflows.</h1>
+
+			<p class="insights-lead">
+				Thoughts, observations and lessons from architectural practice,
+				Revit development and the ongoing evolution of Flow.
+			</p>
+
+		</div>
+	</section>
+
+
+	<section class="insights-list">
+		<div class="insights-list__inner">
+
+			<div class="insights-section-heading">
+				<p class="eyebrow">LATEST INSIGHTS</p>
+
+				<h2>From practice, development and everything in between.</h2>
+
+				<p>
+					Exploring the workflows, technologies and ideas behind Flow,
+					and what we learn from using them in real architectural practice.
+				</p>
+			</div>
+
+
+			<div class="insights-grid">
+
+				{insights.map((article) => (
+
+					<article class="insight-card">
+
+						{article.data.image && (
+							<a
+								class="insight-card__image"
+								href={`/insights/${article.id}/`}
+								aria-label={`Read ${article.data.title}`}
+							>
+								<img
+									src={article.data.image}
+									alt=""
+									loading="lazy"
+								/>
+							</a>
+						)}
+
+						<div class="insight-card__meta">
+							<span>{article.data.category}</span>
+
+							<span>
+								{article.data.date.toLocaleDateString("en-NZ", {
+									day: "numeric",
+									month: "long",
+									year: "numeric",
+								})}
+							</span>
+						</div>
+
+						<h3>{article.data.title}</h3>
+
+						<p>{article.data.description}</p>
+
+						<a href={`/insights/${article.id}/`}>
+							Read insight
+						</a>
+
+					</article>
+
+				))}
+
+			</div>
+
+		</div>
+	</section>
+
+</BaseLayout>

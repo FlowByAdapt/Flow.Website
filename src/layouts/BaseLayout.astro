@@ -8,13 +8,21 @@ interface Props {
 	description?: string;
 	canonicalPath?: string;
 	image?: string;
+	type?: "website" | "article";
+	publishedTime?: Date;
+	author?: string;
+	category?: string;
 }
 
 const {
 	title = "Flow by Adapt | Revit Tools for Architectural Workflows",
 	description = "Flow is a growing suite of Revit tools designed and tested by experienced architectural designers to solve real-world workflow problems.",
 	canonicalPath = Astro.url.pathname,
-	image = "/branding/flow-logo-dark.png"
+	image = "/branding/flow-logo-dark.png",
+	type = "website",
+	publishedTime,
+	author,
+	category
 } = Astro.props;
 
 const siteURL = Astro.site ?? Astro.url.origin;
@@ -50,6 +58,31 @@ const structuredData = {
 		}
 	]
 };
+
+const articleStructuredData =
+	type === "article"
+		? {
+			"@context": "https://schema.org",
+			"@type": "BlogPosting",
+			"headline": title.replace(" | Flow by Adapt", ""),
+			"description": description,
+			"url": canonicalURL.toString(),
+			"image": socialImageURL.toString(),
+			"datePublished": publishedTime?.toISOString(),
+			"articleSection": category,
+			"author": {
+				"@type": "Organization",
+				"name": author ?? "Flow by Adapt"
+			},
+			"publisher": {
+				"@id": `${siteURL}#organization`
+			},
+			"mainEntityOfPage": {
+				"@type": "WebPage",
+				"@id": canonicalURL.toString()
+			}
+		}
+		: null;
 ---
 
 <!doctype html>
@@ -75,12 +108,26 @@ const structuredData = {
 		<link rel="canonical" href={canonicalURL} />
 
 		<!-- Open Graph -->
-		<meta property="og:type" content="website" />
+		<meta property="og:type" content={type} />
 		<meta property="og:site_name" content="Flow by Adapt" />
 		<meta property="og:title" content={title} />
 		<meta property="og:description" content={description} />
 		<meta property="og:url" content={canonicalURL} />
 		<meta property="og:image" content={socialImageURL} />
+
+		{type === "article" && publishedTime && (
+			<meta
+				property="article:published_time"
+				content={publishedTime.toISOString()}
+			/>
+		)}
+
+		{type === "article" && author && (
+			<meta
+				property="article:author"
+				content={author}
+			/>
+		)}
 
 		<!-- Social sharing -->
 		<meta name="twitter:card" content="summary_large_image" />
@@ -93,6 +140,13 @@ const structuredData = {
 			type="application/ld+json"
 			set:html={JSON.stringify(structuredData)}
 		></script>
+
+		{articleStructuredData && (
+			<script
+				type="application/ld+json"
+				set:html={JSON.stringify(articleStructuredData)}
+			></script>
+		)}
 
 		<!-- Branding -->
 		<link rel="icon" type="image/png" href="/flow-favicon.png" />

@@ -11,6 +11,14 @@ const isTools =
 	currentPath === `${base}/tools` ||
 	currentPath === "/tools";
 
+const isInsights =
+	currentPath === `${base}/insights` ||
+	currentPath === `${base}/insights/` ||
+	currentPath === "/insights" ||
+	currentPath === "/insights/" ||
+	currentPath.startsWith(`${base}/insights/`) ||
+	currentPath.startsWith("/insights/");
+
 const isAbout =
 	currentPath === `${base}/about` ||
 	currentPath === "/about";
@@ -47,6 +55,13 @@ const isContact =
 				class:list={{ active: isTools }}
 			>
 				Tools
+			</a>
+
+			<a
+				href={`${base}/insights`}
+				class:list={{ active: isInsights }}
+			>
+				Insights
 			</a>
 
 			<a
