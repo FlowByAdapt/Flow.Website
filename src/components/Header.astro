@@ -42,7 +42,23 @@ const isContact =
 			/>
 		</a>
 
-		<nav class="site-nav" aria-label="Primary">
+		<button
+			class="mobile-menu-toggle"
+			type="button"
+			aria-label="Open navigation menu"
+			aria-expanded="false"
+			aria-controls="primary-navigation"
+		>
+			<span></span>
+			<span></span>
+			<span></span>
+		</button>
+
+		<nav
+			id="primary-navigation"
+			class="site-nav"
+			aria-label="Primary"
+		>
 			<a
 				href={`${base}/`}
 				class:list={{ active: isHome }}
@@ -78,6 +94,7 @@ const isContact =
 			>
 				Help
 			</a>
+
 			<a
 				href={`${base}/contact`}
 				class:list={{ active: isContact }}
@@ -87,3 +104,40 @@ const isContact =
 		</nav>
 	</div>
 </header>
+
+<script>
+	const menuToggle = document.querySelector(".mobile-menu-toggle");
+	const navigation = document.querySelector(".site-nav");
+
+	if (menuToggle && navigation) {
+		menuToggle.addEventListener("click", () => {
+			const isOpen = navigation.classList.toggle("is-open");
+
+			menuToggle.classList.toggle("is-open", isOpen);
+
+			menuToggle.setAttribute(
+				"aria-expanded",
+				isOpen ? "true" : "false"
+			);
+
+			menuToggle.setAttribute(
+				"aria-label",
+				isOpen
+					? "Close navigation menu"
+					: "Open navigation menu"
+			);
+		});
+
+		navigation.querySelectorAll("a").forEach((link) => {
+			link.addEventListener("click", () => {
+				navigation.classList.remove("is-open");
+				menuToggle.classList.remove("is-open");
+				menuToggle.setAttribute("aria-expanded", "false");
+				menuToggle.setAttribute(
+					"aria-label",
+					"Open navigation menu"
+				);
+			});
+		});
+	}
+</script>
