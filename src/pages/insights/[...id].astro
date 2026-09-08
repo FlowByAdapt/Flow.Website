@@ -70,9 +70,57 @@ const { Content } = await render(article);
 			</div>
 		)}
 
-		<div class="insight-article__body">
-			<Content />
-		</div>
+<div class="insight-article__body">
+	<Content />
+</div>
 
-	</article>
+{article.data.gallery && article.data.gallery.length > 0 && (
+	<section
+		class="insight-gallery"
+		aria-labelledby="insight-gallery-title"
+	>
+		<div class="insight-gallery__inner">
+
+			<p class="eyebrow">Explore the tool</p>
+
+			<h2 id="insight-gallery-title">
+				Inside the Flow Content Browser
+			</h2>
+
+			<div class="insight-gallery__grid">
+				{article.data.gallery.map((item, index) => (
+					<figure
+						class:list={[
+							"insight-gallery__item",
+							{
+								"insight-gallery__item--primary":
+									index === 0,
+							},
+						]}
+					>
+						<a
+							class="insight-gallery__link"
+							href={item.image}
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							<img
+								src={item.image}
+								alt={item.alt}
+								loading="lazy"
+							/>
+						</a>
+
+						<figcaption>
+							{item.caption}
+						</figcaption>
+					</figure>
+				))}
+			</div>
+
+		</div>
+	</section>
+)}
+
+</article>
 </BaseLayout>
