@@ -4,11 +4,13 @@ description: "Archiving a Revit Server project involves more than copying files.
 date: 2026-10-01
 author: "Flow by Adapt"
 category: "Flow"
-image: "/insights/archiving-revit-projects-safely.png"
+image: "/insights/archiving-revit-projects-safely.jpg"
 featured: false
+galleryEyebrow: "Explore the workflow"
+galleryTitle: "Inside the Flow Server Archive Queue"
 
 gallery:
-  - image: "/insights/flow-server-archive-queue.png"
+  - image: "/insights/flow-server-archive-queue.jpg"
     alt: "Flow Server Archive Queue showing anonymised Revit Server models prepared for archiving"
     caption: "The Archive Queue makes the proposed model set, archive destination and status of each job visible before the workflow begins."
 ---
