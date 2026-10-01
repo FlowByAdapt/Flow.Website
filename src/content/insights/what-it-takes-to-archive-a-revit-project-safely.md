@@ -128,8 +128,6 @@ In the next article in this series, we look at how that trusted archive becomes 
 
 [Read the first article: Making Revit Server Work Better for a Small Practice →](/insights/making-revit-server-work-better/)
 
-[Read the next article: Upgrading a Revit Server Project Without Losing Its History →](/insights/upgrading-a-revit-server-project-without-losing-its-history/)
-
 **Want to explore Flow Server in more detail?**
 
 [View the Flow Server documentation →](https://help.flowbyadapt.com/applications/flow-server/)
