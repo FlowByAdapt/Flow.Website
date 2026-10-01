@@ -81,10 +81,12 @@ const { Content } = await render(article);
 	>
 		<div class="insight-gallery__inner">
 
-			<p class="eyebrow">Explore the tool</p>
+			<p class="eyebrow">
+				{article.data.galleryEyebrow ?? "Explore the tool"}
+			</p>
 
 			<h2 id="insight-gallery-title">
-				Inside the Flow Content Browser
+				{article.data.galleryTitle ?? "Inside the workflow"}
 			</h2>
 
 			<div class="insight-gallery__grid">

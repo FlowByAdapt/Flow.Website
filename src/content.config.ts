@@ -14,6 +14,8 @@ const insights = defineCollection({
 		author: z.string(),
 		category: z.string(),
 		image: z.string().optional(),
+		galleryEyebrow: z.string().optional(),
+		galleryTitle: z.string().optional(),
 
 		gallery: z.array(
 			z.object({
