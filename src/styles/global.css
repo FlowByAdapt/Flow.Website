@@ -328,6 +328,10 @@ h1 {
 	background: #aa90ff;
 }
 
+:root[data-theme="light"] .button.primary:hover {
+	background: #6040b5;
+}
+
 .button.secondary {
 	border: 1px solid var(--flow-border);
 
