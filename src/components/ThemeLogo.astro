@@ -1,0 +1,7 @@
+---
+interface Props { class?: string }
+const { class: className } = Astro.props;
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+---
+<img src={`${base}/branding/flow-logo-dark.png`} alt="Flow by Adapt" class:list={[className, 'theme-logo-dark']} />
+<img src={`${base}/branding/flow-logo-light.png`} alt="Flow by Adapt" class:list={[className, 'theme-logo-light']} />
