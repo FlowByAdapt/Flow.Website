@@ -1,6 +1,7 @@
 ---
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import ThemeSetup from "../components/ThemeSetup.astro";
 import "../styles/global.css";
 
 interface Props {
@@ -88,6 +89,7 @@ const articleStructuredData =
 <!doctype html>
 <html lang="en">
 	<head>
+		<ThemeSetup />
 		<!-- Google tag (gtag.js) -->
 		<script async src="https://www.googletagmanager.com/gtag/js?id=G-74NR0BKB4M"></script>
 		<script is:inline>
