@@ -3,7 +3,7 @@ export const applications = [
         id: "flow-practice-manager",
         name: "Flow Practice Manager",
         summary: "Prepare fee proposals and carry the agreed scope and budget into project delivery.",
-        description: "Build proposals from your practice's own templates and fee stages. Once a proposal is approved, carry the agreed fees and tasks into project setup, then review hours, budgets and progress claims as the work moves ahead.",
+        description: "Build proposals from your practice’s own templates and fee stages. Once a proposal is approved, carry the agreed fees and tasks into project setup, then review hours, budgets and progress claims as the work moves ahead.",
         links: [
             {
                 label: "Read From Fee Proposal to Project Delivery",
