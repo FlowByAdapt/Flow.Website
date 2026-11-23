@@ -13,6 +13,8 @@ const isTools =
 	currentPath === `${base}/tools` ||
 	currentPath === "/tools";
 
+const isApplications = currentPath.replace(/\/$/, "") === `${base}/applications`;
+
 const isInsights =
 	currentPath === `${base}/insights` ||
 	currentPath === `${base}/insights/` ||
@@ -71,6 +73,13 @@ const isContact =
 				Tools
 			</a>
 
+			<a
+				href={`${base}/applications/`}
+				class:list={{ active: isApplications }}
+				aria-current={isApplications ? "page" : undefined}
+			>
+				Applications
+			</a>
 			<a
 				href={`${base}/insights`}
 				class:list={{ active: isInsights }}

@@ -1,0 +1,122 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { applications } from "../data/applications";
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+---
+
+<BaseLayout
+    title="Flow Applications | Flow by Adapt"
+    description="Explore Flow Practice Manager, Flow Workstation Manager and Flow Server. Three applications for architectural practice, office deployment and Revit Server administration."
+>
+    <div class="applications-page">
+        <header>
+            <h1>Flow Applications</h1>
+            <p>
+                Prepare a fee proposal and follow it through to delivery, roll out Flow across the office,
+                or manage your practice's Revit Server projects.
+            </p>
+        </header>
+
+        <div class="application-list">
+            {applications.map(({ id, name, description, image, links }) => (
+                <section class="application" id={id} aria-labelledby={`${id}-title`}>
+                    <div class="application-copy">
+                        <h2 id={`${id}-title`}>{name}</h2>
+                        <p>{description}</p>
+                        {links && (
+                            <div class="application-links">
+                                {links.map(({ href, path, label }) => (
+                                    <a class="text-link" href={href ?? `${base}${path}`}>{label}</a>
+                                ))}
+                            </div>
+                        )}
+                    </div>
+                    {image && <img src={`${base}${image.path}`} alt={image.alt} loading="lazy" />}
+                </section>
+            ))}
+        </div>
+    </div>
+</BaseLayout>
+
+<style>
+    .applications-page {
+        max-width: calc(var(--flow-content-width) + 2 * var(--flow-page-padding));
+        margin-inline: auto;
+        padding: clamp(3rem, 8vw, 6.5rem) var(--flow-page-padding);
+    }
+
+    header {
+        margin-bottom: clamp(2rem, 6vw, 4rem);
+    }
+
+    h1 {
+        margin: 0 0 1rem;
+        font-size: clamp(2.7rem, 7vw, 5.2rem);
+        line-height: 1.05;
+        letter-spacing: -0.045em;
+    }
+
+    header p {
+        max-width: 42rem;
+        margin: 0;
+        font-size: clamp(1.05rem, 2vw, 1.25rem);
+        color: var(--flow-text-secondary);
+    }
+
+    .application-list {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1.5rem;
+    }
+
+    .application {
+        padding: clamp(1.5rem, 4vw, 2.75rem);
+        border: 1px solid var(--flow-border-soft);
+        border-radius: var(--flow-radius-medium);
+        background: var(--flow-surface);
+        scroll-margin-top: 8rem;
+    }
+
+    .application:last-child {
+        grid-column: 1 / -1;
+        display: grid;
+        grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+        align-items: center;
+        gap: 2rem;
+    }
+
+    h2 {
+        margin: 0 0 0.8rem;
+        font-size: clamp(1.45rem, 3vw, 2rem);
+        line-height: 1.15;
+        letter-spacing: -0.025em;
+    }
+
+    .application p {
+        margin: 0;
+        color: var(--flow-text-secondary);
+        line-height: 1.65;
+    }
+
+    .application-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem 1.25rem;
+        margin-top: 1.25rem;
+    }
+
+    .application img {
+        display: block;
+        width: 100%;
+        height: auto;
+        border-radius: var(--flow-radius-small);
+    }
+
+    @media (max-width: 720px) {
+        .application-list,
+        .application:last-child {
+            grid-template-columns: minmax(0, 1fr);
+        }
+    }
+</style>
