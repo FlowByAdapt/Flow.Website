@@ -444,7 +444,8 @@ h1 {
 .capabilities {
     padding:
         8rem
-        var(--flow-page-padding);
+        var(--flow-page-padding)
+        0;
 
 	background: var(--flow-bg);
 }
@@ -569,7 +570,6 @@ h1 {
 	.origin,
 	.capabilities {
 		padding-top: 5rem;
-		padding-bottom: 5rem;
 	}
 
 	.capability-grid {
