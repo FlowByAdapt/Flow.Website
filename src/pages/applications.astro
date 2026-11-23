@@ -1,0 +1,78 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { applications } from "../data/applications";
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+---
+
+<BaseLayout
+    title="Flow Applications | Flow by Adapt"
+    description="Explore Flow Practice Manager, Flow Workstation Manager and Flow Server. Three applications for architectural practice, office deployment and Revit Server administration."
+>
+    <section class="tools-page">
+        <div class="tools-intro">
+            <p class="eyebrow">Flow Applications</p>
+            <h1>Applications for running your practice.</h1>
+            <p class="tools-lead">
+                Take fee proposals through to project delivery, roll out Flow across the office,
+                and manage your practice’s Revit Server projects.
+            </p>
+        </div>
+    </section>
+
+    <section class="tool-catalogue applications-catalogue" aria-labelledby="application-list-title">
+        <div class="tool-catalogue__inner">
+            <div class="tool-section-heading">
+                <h2 id="application-list-title">Explore the applications.</h2>
+            </div>
+            <div class="tool-grid">
+                {applications.map(({ id, name, description, image, links }) => (
+                    <article class="tool-card" id={id} aria-labelledby={`${id}-title`}>
+                        <div class="application-media">
+                            <img src={`${base}${image.path}`} alt={image.alt} loading="lazy" />
+                        </div>
+                        <h3 id={`${id}-title`}>{name}</h3>
+                        <p>{description}</p>
+                        <div class="application-links">
+                            {links.map(({ href, path, label }) => (
+                                <a href={href ?? `${base}${path}`}>{label}</a>
+                            ))}
+                        </div>
+                    </article>
+                ))}
+            </div>
+        </div>
+    </section>
+</BaseLayout>
+
+<style>
+    .applications-catalogue {
+        padding-block: clamp(3rem, 6vw, 5rem);
+        border-top: 0;
+        background: var(--flow-surface);
+    }
+
+    .application-media {
+        display: grid;
+        place-items: center;
+        aspect-ratio: 16 / 10;
+        overflow: hidden;
+        margin-bottom: 1.5rem;
+        border-radius: var(--flow-radius-small);
+        background: var(--flow-bg);
+    }
+
+    .application-media img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        min-height: 0;
+        object-fit: contain;
+    }
+
+    .application-links {
+        display: grid;
+        gap: 0.65rem;
+        margin-top: auto;
+    }
+</style>
