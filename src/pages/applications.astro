@@ -9,114 +9,82 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
     title="Flow Applications | Flow by Adapt"
     description="Explore Flow Practice Manager, Flow Workstation Manager and Flow Server. Three applications for architectural practice, office deployment and Revit Server administration."
 >
-    <div class="applications-page">
-        <header>
-            <h1>Flow Applications</h1>
-            <p>
-                Prepare a fee proposal and follow it through to delivery, roll out Flow across the office,
-                or manage your practice’s Revit Server projects.
+    <section class="tools-page">
+        <div class="tools-intro">
+            <p class="eyebrow">Flow Applications</p>
+            <h1>Applications for running your practice.</h1>
+            <p class="tools-lead">
+                Take fee proposals through to project delivery, roll out Flow across the office,
+                and manage your practice’s Revit Server projects.
             </p>
-        </header>
-
-        <div class="application-list">
-            {applications.map(({ id, name, description, image, links }) => (
-                <section class="application" id={id} aria-labelledby={`${id}-title`}>
-                    <div class="application-copy">
-                        <h2 id={`${id}-title`}>{name}</h2>
-                        <p>{description}</p>
-                        {links && (
-                            <div class="application-links">
-                                {links.map(({ href, path, label }) => (
-                                    <a class="text-link" href={href ?? `${base}${path}`}>{label}</a>
-                                ))}
-                            </div>
-                        )}
-                    </div>
-                    {image && <img src={`${base}${image.path}`} alt={image.alt} loading="lazy" />}
-                </section>
-            ))}
         </div>
-    </div>
+    </section>
+
+    <section class="tool-catalogue applications-catalogue" aria-labelledby="application-list-title">
+        <div class="tool-catalogue__inner">
+            <div class="tool-section-heading">
+                <h2 id="application-list-title">Explore the applications.</h2>
+            </div>
+            <div class="tool-grid">
+                {applications.map(({ id, name, description, image, links }) => (
+                    <article class="tool-card" id={id} aria-labelledby={`${id}-title`}>
+                        <div class:list={["application-media", { "application-media--icon": image.icon }]}>
+                            <img src={`${base}${image.path}`} alt={image.alt} loading="lazy" />
+                        </div>
+                        <h3 id={`${id}-title`}>{name}</h3>
+                        <p>{description}</p>
+                        <div class="application-links">
+                            {links.map(({ href, path, label }) => (
+                                <a href={href ?? `${base}${path}`}>{label}</a>
+                            ))}
+                        </div>
+                    </article>
+                ))}
+            </div>
+        </div>
+    </section>
 </BaseLayout>
 
 <style>
-    .applications-page {
-        max-width: calc(var(--flow-content-width) + 2 * var(--flow-page-padding));
-        margin-inline: auto;
-        padding: clamp(3rem, 8vw, 6.5rem) var(--flow-page-padding);
-    }
-
-    header {
-        margin-bottom: clamp(2rem, 6vw, 4rem);
-    }
-
-    h1 {
-        margin: 0 0 1rem;
-        font-size: clamp(2.7rem, 7vw, 5.2rem);
-        line-height: 1.05;
-        letter-spacing: -0.045em;
-    }
-
-    header p {
-        max-width: 42rem;
-        margin: 0;
-        font-size: clamp(1.05rem, 2vw, 1.25rem);
-        color: var(--flow-text-secondary);
-    }
-
-    .application-list {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 1.5rem;
-    }
-
-    .application {
-        padding: clamp(1.5rem, 4vw, 2.75rem);
-        border: 1px solid var(--flow-border-soft);
-        border-radius: var(--flow-radius-medium);
+    .applications-catalogue {
+        padding-block: clamp(3rem, 6vw, 5rem);
+        border-top: 0;
         background: var(--flow-surface);
-        scroll-margin-top: 8rem;
     }
 
-    .application:last-child {
-        grid-column: 1 / -1;
+    .application-media {
         display: grid;
-        grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
-        align-items: center;
-        gap: 2rem;
+        place-items: center;
+        aspect-ratio: 16 / 10;
+        overflow: hidden;
+        margin-bottom: 1.5rem;
+        border-radius: var(--flow-radius-small);
+        background: var(--flow-bg);
     }
 
-    h2 {
-        margin: 0 0 0.8rem;
-        font-size: clamp(1.45rem, 3vw, 2rem);
-        line-height: 1.15;
-        letter-spacing: -0.025em;
+    .application-media img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        min-height: 0;
+        object-fit: contain;
     }
 
-    .application p {
-        margin: 0;
-        color: var(--flow-text-secondary);
-        line-height: 1.65;
+    .application-media--icon {
+        background:
+            radial-gradient(ellipse at center, rgba(92, 124, 250, 0.22), transparent 70%),
+            var(--flow-bg);
+    }
+
+    .application-media--icon img {
+        width: auto;
+        height: auto;
+        max-width: 32%;
     }
 
     .application-links {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.75rem 1.25rem;
-        margin-top: 1.25rem;
-    }
-
-    .application img {
-        display: block;
-        width: 100%;
-        height: auto;
-        border-radius: var(--flow-radius-small);
-    }
-
-    @media (max-width: 720px) {
-        .application-list,
-        .application:last-child {
-            grid-template-columns: minmax(0, 1fr);
-        }
+        display: grid;
+        gap: 0.65rem;
+        margin-top: auto;
     }
 </style>
