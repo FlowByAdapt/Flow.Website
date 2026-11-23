@@ -442,10 +442,7 @@ h1 {
    ========================================================= */
 
 .capabilities {
-    padding:
-        8rem
-        var(--flow-page-padding)
-        0;
+    padding: clamp(2.5rem, 5vw, 4rem) var(--flow-page-padding) clamp(3rem, 7vw, 6rem);
 
 	background: var(--flow-bg);
 }
@@ -568,10 +565,6 @@ h1 {
 	}
 
 	.origin,
-	.capabilities {
-		padding-top: 5rem;
-	}
-
 	.capability-grid {
 		grid-template-columns: 1fr;
 	}
