@@ -7,7 +7,8 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 <section class="applications-feature" aria-labelledby="applications-heading">
     <div class="section-content">
         <div class="feature-panel">
-            <h2 id="applications-heading">Flow Applications</h2>
+            <p class="eyebrow">Flow Applications</p>
+            <h2 id="applications-heading">Applications for running your practice</h2>
             <ul>
                 {applications.map(({ name, summary }) => (
                     <li>
@@ -57,7 +58,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
         font-size: 1.08rem;
     }
 
-    p {
+    li p {
         margin: 0;
         color: var(--flow-text-secondary);
     }
