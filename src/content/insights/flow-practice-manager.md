@@ -4,6 +4,7 @@ description: "How we’re connecting proposals, project reviews, progress claims
 date: 2026-11-23
 author: "Flow by Adapt"
 category: "Flow"
+image: "/insights/flow-practice-manager.jpg"
 featured: false
 ---
 
