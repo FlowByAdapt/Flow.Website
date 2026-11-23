@@ -21,9 +21,8 @@ export const applications = [
         summary: "Coordinate Flow releases across office workstations.",
         description: "Check which Revit versions and Flow tools are installed across office computers, and keep them up to date using approved releases from your shared Flow folder.",
         image: {
-            path: "/icons/workspace_icon.png",
-            alt: "",
-            icon: true,
+            path: "/assets/flow-workstation-manager.png",
+            alt: "Flow Workstation Manager office software inventory with sample Revit installations",
         },
         links: [
             {

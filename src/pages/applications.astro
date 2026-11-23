@@ -28,7 +28,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
             <div class="tool-grid">
                 {applications.map(({ id, name, description, image, links }) => (
                     <article class="tool-card" id={id} aria-labelledby={`${id}-title`}>
-                        <div class:list={["application-media", { "application-media--icon": image.icon }]}>
+                        <div class="application-media">
                             <img src={`${base}${image.path}`} alt={image.alt} loading="lazy" />
                         </div>
                         <h3 id={`${id}-title`}>{name}</h3>
@@ -68,18 +68,6 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
         height: 100%;
         min-height: 0;
         object-fit: contain;
-    }
-
-    .application-media--icon {
-        background:
-            radial-gradient(ellipse at center, rgba(92, 124, 250, 0.22), transparent 70%),
-            var(--flow-bg);
-    }
-
-    .application-media--icon img {
-        width: auto;
-        height: auto;
-        max-width: 32%;
     }
 
     .application-links {
