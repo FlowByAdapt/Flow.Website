@@ -4,6 +4,10 @@ export const applications = [
         name: "Flow Practice Manager",
         summary: "Prepare fee proposals and carry the agreed scope and budget into project delivery.",
         description: "Build proposals from your practice’s own templates and fee stages. Once a proposal is approved, carry the agreed fees and tasks into project setup, then review hours, budgets and progress claims as the work moves ahead.",
+        image: {
+            path: "/insights/flow-practice-manager.jpg",
+            alt: "From Proposal to Project artwork showing the fee proposal and project setup workflow",
+        },
         links: [
             {
                 label: "Read From Fee Proposal to Project Delivery",
@@ -15,7 +19,18 @@ export const applications = [
         id: "flow-workstation-manager",
         name: "Flow Workstation Manager",
         summary: "Coordinate Flow releases across office workstations.",
-        description: "Manage the office rollout of Flow from one place. Prepare a release, deploy it to workstations and see which machines have received it.",
+        description: "Check which Revit versions and Flow tools are installed across office computers, and keep them up to date using approved releases from your shared Flow folder.",
+        image: {
+            path: "/icons/workspace_icon.png",
+            alt: "",
+            icon: true,
+        },
+        links: [
+            {
+                label: "Explore Workstation Manager in Flow Help",
+                href: "https://help.flowbyadapt.com/applications/workstation-manager/",
+            },
+        ],
     },
     {
         id: "flow-server",
